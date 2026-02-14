@@ -1,0 +1,113 @@
+/* ========== LEARN PAGE ========== */
+.learnPage {
+    min-height: calc(100vh - 96px);
+    padding-bottom: 60px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 8px;
+}
+
+.accent {
+    background: linear-gradient(135deg, #00FF88, #00CC6A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* ========== MODALITY SELECTOR ========== */
+.modalitySelector {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.modalityBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 20px 16px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-family: var(--font-primary);
+}
+
+.modalityBtn:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+}
+
+.modalityActive {
+    border-color: var(--green-primary) !important;
+    box-shadow: var(--shadow-glow-intense) !important;
+    background: rgba(0, 255, 136, 0.05);
+}
+
+.modalityIcon {
+    font-size: 1.5rem;
+}
+
+.modalityLabel {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+}
+
+.modalityDesc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ========== MODULE CONTAINER ========== */
+.moduleContainer {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: 32px;
+    box-shadow: var(--shadow-lg);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .modalitySelector {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .moduleContainer {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modalitySelector {
+        grid-template-columns: 1fr;
+    }
+}

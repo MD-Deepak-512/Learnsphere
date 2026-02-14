@@ -1,0 +1,397 @@
+/* ========== LANDING PAGE STYLES ========== */
+.page {
+  overflow-x: hidden;
+}
+
+/* ========== HERO ========== */
+.hero {
+  min-height: calc(100vh - 96px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+  position: relative;
+}
+
+.heroContent {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ========== AI ORB ========== */
+.orbContainer {
+  margin-bottom: 16px;
+}
+
+.orb {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: orb-pulse 4s ease-in-out infinite;
+}
+
+.orbInner {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #00FF88, #00CC6A, #00A857);
+  box-shadow: 0 0 40px rgba(0, 255, 136, 0.6), inset 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.orbRing1,
+.orbRing2,
+.orbRing3 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.orbRing1 {
+  width: 80px;
+  height: 80px;
+  animation: ring-rotate 8s linear infinite;
+  border-style: dashed;
+}
+
+.orbRing2 {
+  width: 100px;
+  height: 100px;
+  animation: ring-rotate 12s linear infinite reverse;
+  border-color: rgba(0, 255, 136, 0.2);
+}
+
+.orbRing3 {
+  width: 120px;
+  height: 120px;
+  animation: ring-rotate 16s linear infinite;
+  border-color: rgba(0, 255, 136, 0.1);
+  border-style: dotted;
+}
+
+/* ========== HERO TEXT ========== */
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.heroAccent {
+  background: linear-gradient(135deg, #00FF88, #00CC6A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ========== CTA BUTTONS ========== */
+.heroCTA {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--green-primary);
+  color: var(--text-on-green);
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: 0 0 20px var(--green-glow-soft), var(--shadow-md);
+}
+
+.btnPrimary:hover {
+  background: var(--green-deep);
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px var(--green-glow), var(--shadow-lg);
+}
+
+.btnPrimary:active {
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--green-primary);
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.btnSecondary:hover {
+  border-color: var(--green-primary);
+  box-shadow: 0 0 20px var(--green-glow-soft);
+  background: rgba(0, 255, 136, 0.05);
+}
+
+/* ========== SCROLL INDICATOR ========== */
+.scrollIndicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--border-hover);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.scrollDot {
+  width: 4px;
+  height: 8px;
+  background: var(--green-primary);
+  border-radius: var(--radius-full);
+  animation: float 2s ease-in-out infinite;
+}
+
+/* ========== CONTAINER ========== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========== SECTION HEADER ========== */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.sectionHeader h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 12px;
+}
+
+.sectionHeader p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* ========== FEATURES ========== */
+.features {
+  padding: 100px 0;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.featureCard {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  cursor: default;
+}
+
+.featureCard:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.featureIcon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green-glow-soft);
+  border-radius: var(--radius-md);
+}
+
+.featureCard h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  font-family: var(--font-display);
+}
+
+.featureCard p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ========== CAPABILITIES ========== */
+.capabilities {
+  padding: 80px 0 100px;
+}
+
+.capList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.capItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-default);
+  transition: all var(--transition-normal);
+}
+
+.capItem:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+.capDot {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  border-radius: 50%;
+  background: var(--green-primary);
+  margin-top: 6px;
+  box-shadow: 0 0 10px var(--green-glow);
+}
+
+.capItem h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  font-family: var(--font-display);
+}
+
+.capItem p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ========== CTA SECTION ========== */
+.ctaSection {
+  padding: 60px 0 100px;
+}
+
+.ctaCard {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.ctaCard h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  margin-bottom: 12px;
+}
+
+.ctaCard p {
+  margin-bottom: 28px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  border-top: 1px solid var(--border-default);
+  padding: 40px 0;
+}
+
+.footerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footerBrand p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footerCopy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 80px);
+  }
+
+  .heroCTA {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .features,
+  .capabilities {
+    padding: 60px 0;
+  }
+
+  .ctaCard {
+    padding: 40px 24px;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
